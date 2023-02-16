@@ -1,15 +1,16 @@
-
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Hello {
-    public static void main(String[] args) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
+    public static void main(String[] args) {
         String fullPath = args[0];
-        String parse = String.valueOf(parser.parse(new FileReader(fullPath)));
+        String parse = null;
+        try {
+            parse = String.valueOf(new FileReader(fullPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
         System.out.println("Hello World : String: " + parse);
     }
 }
