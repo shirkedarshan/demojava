@@ -12,12 +12,18 @@ public class Hello {
             throw new RuntimeException(e);
         }
 
+        System.out.println("----------------------------");
+        System.out.println("");
+
         int i;
         while ((i = fileReader.read()) != -1) {
             System.out.print((char) i);
         }
         fileReader.close();
 
-        System.out.println("Hello World : String: " + fileReader);
+        System.out.println("");
+        System.out.println("----------------------------");
+
+        System.out.println("Hello World!");
     }
 }
